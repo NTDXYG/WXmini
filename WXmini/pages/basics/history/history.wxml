@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">历史今日</view></cu-custom>
+<view class="padding text-center" wx:for="{{history}}" wx:key>
+  <view class="padding-lr bg-white">
+    <view class="solid-bottom padding">
+    <text class="cuIcon-time">{{item.date}}</text>
+    </view>
+    <view class="padding">{{item.title}}</view>
+  </view>
+</view>

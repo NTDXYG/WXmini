@@ -1,0 +1,23 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">笑话大全</view>
+  <view class="action" slot="right">
+    <view class='cuIcon-refresh' bindtap="loadProgress"></view>
+  </view>
+</cu-custom>
+<scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadMore">
+  <view wx:for="{{joke}}" wx:key>
+    <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+      <view class='text-center margin-bottom text-lg  text-grey'> {{item.updatetime}}</view>
+      <view class='text-content'>
+        <view class='margin-top-sm'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{isLoad}}" class="cu-load bg-grey loading"></view>
+
+<view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+  <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+  <view class='load-progress-spinner text-green'></view>
+</view>

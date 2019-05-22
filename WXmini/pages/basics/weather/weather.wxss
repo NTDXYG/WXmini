@@ -1,0 +1,135 @@
+/**index.wxss**/
+
+/* ------- top city --------- */
+
+.top_city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #39b54a;
+}
+
+.city_list {
+  display: flex; 
+  flex-direction: row; 
+  align-content: center; 
+  width: 330rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  padding: 0 30rpx;
+}
+
+.city_item{
+  color: #fff;
+  width: 120px;
+  font-size: 25rpx;
+  padding-top: 5rpx;
+}
+
+.city_item_center {
+  width: 140px;
+  font-size: 30rpx;
+  font-style: bold;
+  padding-top: 0;
+}
+
+/* ------- today --------- */
+
+.today {
+  padding: 50rpx 0 60rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #39b54a;
+}
+.today .weather {
+  display: flex;  
+  flex-direction:row;
+  padding-left: 30rpx;
+}
+.today .weather .pic {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 40rpx;
+}
+.today .weather .desc{
+  display: flex; 
+  flex-direction: column; 
+  margin-right: 20rpx;
+}
+.today .weather .desc text {
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+.today .temperature {
+  color: #faf9fa;
+  font-size: 70rpx;
+  margin: 30rpx 0;
+  padding-left:40rpx;
+}
+.today .more {
+  color: #faf9fa;
+  font-size: 25rpx;
+  margin-bottom: 20rpx;
+}
+.today .more text {
+  padding: 0 10rpx;
+}
+.today-bottom {
+  background: #faf9fa;
+  width: 150%;
+  height: 300rpx;
+  border-radius: 150%;
+  margin: -50rpx 0 0 0;
+  margin-left:-25%;
+}
+
+/* ------- feature --------- */
+
+.feature {
+  margin-top: -250rpx;
+}
+.feature .day {
+  margin: 20rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 20rpx;
+  background: #fff;
+
+  display: flex;  
+  flex-direction:row;
+}
+.feature .day .date{
+   width: 80rpx;
+   font-size: 28rpx;
+   line-height: 60rpx;
+   margin-right: 20rpx;
+   padding-top: 5rpx;
+}
+.feature .day .pic{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+.feature .day .desc{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+  width: 100px;
+}
+.feature .day .desc text {
+  font-size: 20rpx;
+  line-height: 25rpx;
+  margin-left: 20rpx;
+  margin-top:5rpx;
+  color:#404040;
+}
+.feature .day .temperature{
+   font-size: 28rpx;
+   line-height: 60rpx;
+   margin-left: 80rpx;
+   padding-top: 5rpx;
+}

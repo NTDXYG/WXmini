@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">笑话大全</view>
+  <view class="action" slot="right">
+    <view class='cuIcon-refresh' bindtap="loadProgress"></view>
+  </view>
+</cu-custom>
+<scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadMore">
+  <view wx:for="{{video}}" wx:key>
+    <view class="cu-card dynamic {{isCard?'no-card':''}}">
+      <view class="cu-item shadow">
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <view class="cu-avatar round lg" style="background-image:url({{item.header}});"></view>
+            <view class="content flex-sub">
+              <view>{{item.name}}</view>
+              <view class="text-gray text-sm flex justify-between">
+                {{item.passtime}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="text-content">
+          {{item.text}}
+        </view>
+        <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+          <video enable-play-gesture src='{{item.video}}' controls poster='{{item.thumbnail}}'></video>
+          
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{isLoad}}" class="cu-load bg-grey loading"></view>
+
+<view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+  <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+  <view class='load-progress-spinner text-green'></view>
+</view>

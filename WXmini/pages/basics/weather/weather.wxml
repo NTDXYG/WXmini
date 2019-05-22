@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view class="action" slot="content">南通</view>
+  <view class="action" slot="right">
+    <view class='cuIcon-refresh' bindtap="loadProgress"></view>
+  </view>
+</cu-custom>
+<view>
+  <scroll-view class="container" scroll-y="true" scroll-with-animation="true">
+    <view class="today">
+      <view class="weather">
+        <image class="pic" src="https://p0.ssl.qhimg.com/d/f239f0e2/02.png"></image>
+        <view class="desc">
+          <text>{{realtime.info}}</text>
+          <text>{{realtime.direct}} {{realtime.power}}</text>
+        </view>
+      </view>
+      <view class="temperature">
+        <text>{{realtime.temperature}}°</text>
+      </view>
+      <view class="more">
+        <text>湿度 : {{realtime.humidity}}</text>
+        <text>空气质量指数 : {{realtime.aqi}}</text>
+      </view>
+    </view>
+    <view class="today-bottom"></view>
+    <view class="feature">
+      <view class="day" wx:for="{{future}}" wx:key>
+        <view class="date">{{item.data}}</view>
+        <view class="date">{{item.week}}</view>
+        <image class="pic" src="https://p0.ssl.qhimg.com/d/f239f0e2/01.png"></image>
+        <view class="desc">
+          <text>{{item.weather}}</text>
+          <text>{{item.direct}}</text>
+        </view>
+        <view class="temperature">
+          <text>{{item.temperature}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+  <view class='load-progress-bar bg-blue' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+  <view class='load-progress-spinner text-green'></view>
+</view>

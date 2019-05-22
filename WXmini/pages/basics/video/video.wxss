@@ -1,0 +1,4 @@
+/* pages/basics/video/video.wxss */
+page {
+  height: 100%;
+}
