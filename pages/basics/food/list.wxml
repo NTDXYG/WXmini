@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view wx:if="{{name}}" slot="content">{{name}}</view>
+  <view wx:if="{{keyname}}" slot="content">{{keyname}}</view>
+</cu-custom>
+<scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadMore">
+  <view wx:for="{{list}}" wx:key>
+    <view class="cu-card article no-card" bindtap='detail' data-code='{{item.caipuCode}}'>
+      <view class="cu-item shadow">
+        <view class="content">
+          <image src="{{item.imgUrl}}" mode="aspectFill" style='margin-top:20rpx;'></image>
+          <view class="desc" style='margin-top:10rpx;'>
+            <view class="text-cut" style='font-weight:900;'>{{item.caipuName}}</view>
+            <view class="text-content"> {{item.healthStr}}</view>
+            <view>
+              <view class="cu-tag bg-red light sm round">{{item.favoriteCount}}人收藏</view>
+              <view class="cu-tag bg-green light sm round">{{item.viewCount}}人浏览</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{isLoad}}" class="cu-load bg-grey loading"></view>

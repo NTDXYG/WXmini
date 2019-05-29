@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "index": "/pages/index/home/home",
+    "basics": "/pages/basics/food/food",
+    "about": "/pages/about/home/home"
+  }
+}

@@ -1,0 +1,32 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <block wx:if="{{user.avatarUrl}}">
+      <view class="cu-avatar xl round" style="background-image:url({{user.avatarUrl}});"></view>
+      <view class="text-xl">{{user.nickName}}
+      </view>
+    </block>
+    <block wx:else>
+      <view class="confirm-btn">
+        <button open-type='getUserInfo' bindgetuserinfo="getUserInfo">用户授权</button>
+      </view>
+    </block>
+    <view class="margin-top-sm">
+      <text>By:NTU_杨光</text>
+    </view>
+    <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+    <view class='text-center margin-bottom text-lg  text-grey'>关于小程序</view>
+    <view class='text-content'>
+      <view>Hi！尊敬的用户~欢迎使用口袋菜谱</view>
+      <view class='margin-top-sm'>本项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里Star支持一下！</view>
+      <view class='margin-top-sm'>更多功能敬请期待！</view>
+    </view>
+    <view class="padding flex flex-direction">
+      <button class="cu-btn block bg-gradual-blue margin-tb-sm lg shadow-blur" bindtap='Copy'>Github</button>
+      <button class="cu-btn block bg-gradual-blue margin-tb-sm lg shadow-blur" open-type='share'>分享给好友</button>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

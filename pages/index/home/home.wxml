@@ -1,0 +1,52 @@
+<scroll-view scroll-y class="scrollPage" style='background-image: url("https://cdn.nlark.com/yuque/0/2019/jpeg/280373/1552401524166-assets/web-upload/21495ec9-919e-46b4-95eb-fe4420b91cc3.jpeg");background-size: 100% 100%;'>
+  <cu-custom>
+    <view slot="content">口袋菜谱</view>
+  </cu-custom>
+  <!-- <image src='/images/BasicsBg.png' mode='widthFix' class='png' style='width:100%;height:486rpx'></image> -->
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}" class="{{cardCur==index?'cur':''}}" wx:if="{{index<6}}">
+      <view class="swiper-item" bindtap='toDetail' data-code='{{item.caipuCode}}'>
+        <image src="{{item.imgUrl}}" mode="aspectFill"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="solid-bottom text-xl padding">
+    <view class='cu-list menu '>
+      <view class="cu-item">
+        <view class="content">
+          <text class="text-black text-bold">热门标签</text>
+        </view>
+        <view class="action">
+          <text class="text-grey text-sm" bindtap='toMore'>查看更多>></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list grid col-3  no-border" style="background-color:transparent;">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key bindtap='gotoDetail' data-id='{{item.id}}' data-name='{{item.name}}'>
+      <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="solid-bottom text-xl padding">
+    <view class='cu-list menu '>
+      <view class="cu-item">
+        <view class="content">
+          <text class="text-black text-bold">猜您喜欢</text>
+        </view>
+        <view class="action">
+          <text class="text-grey text-sm">您喜欢的美食</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='nav-list'>
+    <view class="nav-li bg-{{item.color}} light" wx:for="{{elements}}" wx:key bindtap='gotoDetail' data-id='{{item.id}}' data-name='{{item.title}}'>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.name}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </view>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>
